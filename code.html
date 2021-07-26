@@ -38,10 +38,10 @@
                     <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                    <a class="nav-link" target="_blank" href="https://github.com/MuggsyCodes/ReverseHyper">Git Repo</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="#">About</a>
+                    <a class="nav-link" target="_blank" href="https://github.com/MuggsyCodes">About</a>
                 </li>
             </ul>
         </div>
@@ -55,18 +55,55 @@
             <!--JS Code goes here-->
             <div class="col-lg-8">
                 <pre class="line-numbers"><code class="language-javascript">
-                    //call hello world
-                    funtion helloWorld() {
-                        alert("hello World");
+                    // take in the user input from the page
+                    function get_user_input() {
+                    
+                      document.getElementById("alert").classList.add("invisible");
+                     
+                      //user input goes here
+                      let my_string = document.getElementById("user_text").value;
+                      //alert("Word inputted by the user: "+my_string); 
+                    
+                      return my_string
+                    }
+                    
+                    // create the reversed string from user input 
+                    function reverse() {
+                      
+                      // let's try an array
+                      let reverse = [];
+                    
+                      my_string = get_user_input();
+                      let my_len = my_string.length;
+                      let x = my_len-1;
+                      //for loop to iterate through user input and place in array
+                      for(i=x; i>-1; i--) {
+                        //add letters from user string to array
+                        reverse += my_string[i];
+                    
+                      }
+                    
+                      return reverse
+                    }
+                    
+                    // display the reverse string on the HTML page 
+                    function display_reverse() {
+                      answer = reverse();
+                    
+                      my_result = `<h4>Your reversed string is: ${answer}</h4>`;
+                      //You nailed it! message 
+                      document.getElementById("msg").innerHTML = my_result;
+                      document.getElementById("alert").classList.remove("invisible");
+                    
                     }
                 </code>
                 </pre>
             </div>
             <!--Description of code goes here-->
             <div class="col-lg-4">
-                <p>The Code is structured in one function.</p>
-                <h5>Hello World</h5>
-                <p>Hello World is a function that displays an alert with a message of "Hello World"</p>
+                <p>The Code is executed using arrays and for loops.</p>
+                <h5>The Reverse Hyper</h5>
+                <p>The Reverse Hyper displays the text inputted by a user in REVERSE!</p>
             </div>
         </div>
     </div>
